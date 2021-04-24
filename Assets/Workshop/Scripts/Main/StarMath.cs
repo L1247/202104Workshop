@@ -6,11 +6,23 @@ namespace Main
     {
         public int Add(int number1 , int number2)
         {
-            if (number1 < 0 & number2 < 0) throw new Exception("number1 and number2 are negative number");
-            if (number1 < 0) throw new Exception("number1 is negative number");
-            if (number2 < 0) throw new Exception("number2 is negative number");
+            // ReSharper disable once InconsistentNaming
+            var number1_Is_Negative = IsNumberNegative(number1);
+            // ReSharper disable once InconsistentNaming
+            var number2_Is_Negative = IsNumberNegative(number2);
+            // ReSharper disable once InconsistentNaming
+            var number1_And_Number2_Is_Negative = number1_Is_Negative & number2_Is_Negative;
+            if (number1_And_Number2_Is_Negative)
+                throw new Exception("number1 and number2 are negative number");
+            if (number1_Is_Negative) throw new Exception("number1 is negative number");
+            if (number2_Is_Negative) throw new Exception("number2 is negative number");
             var result = number1 + number2;
             return result;
+        }
+
+        private bool IsNumberNegative(int number)
+        {
+            return number < 0;
         }
     }
 }
