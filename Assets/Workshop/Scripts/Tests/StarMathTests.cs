@@ -3,21 +3,24 @@ using NUnit.Framework;
 public class StarMathTests
 {
     [Test]
-    public void Should_Return_Positive_Number_Of_Add_Result()
+    [TestCase(1,2,3)]
+    [TestCase(789,123,912)]
+    public void Should_Return_Positive_Number_Of_Add_Result(int number1 , int number2 , int expected)
     {
         // Arrange
         var starMath = new StarMath();
         // Act
-        var addResult = starMath.Add(1 , 2);
+        var addResult = starMath.Add(number1 , number2);
         // Assert
-        Assert.AreEqual(3 , addResult);
+        Assert.AreEqual(expected , addResult);
     }
 }
+
 
 public class StarMath
 {
     public int Add(int number1 , int number2)
     {
-        return 3;
+        return number1 + number2;
     }
 }
