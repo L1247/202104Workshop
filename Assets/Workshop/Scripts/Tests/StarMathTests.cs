@@ -1,28 +1,22 @@
+using Main;
 using NUnit.Framework;
-using UnityEngine;
 
-public class StarMathTests
+
+namespace MainTest
 {
-    [Test]
-    [TestCase(1 , 2 , 3)]
-    [TestCase(789 , 123 , 912)]
-    public void Should_Return_Positive_Number_Of_Add_Result(int number1 , int number2 , int expected)
+    public class StarMathTests
     {
-        // Arrange
-        var starMath = new StarMath();
-        // Act
-        var addResult = starMath.Add(number1 , number2);
-        // Assert
-        Assert.AreEqual(expected , addResult);
-    }
-}
-
-
-public class StarMath
-{
-    public int Add(int number1 , int number2)
-    {
-        var result = number1 + number2;
-        return result;
+        [Test]
+        [TestCase(1 , 2 , 3)]
+        [TestCase(789 , 123 , 912)]
+        public void Should_Return_Positive_Number_Of_Add_Result(int number1 , int number2 , int expected)
+        {
+            // Arrange
+            var starMath = new StarMath();
+            // Act
+            var addResult = starMath.Add(number1 , number2);
+            // Assert
+            Assert.AreEqual(expected , addResult);
+        }
     }
 }
