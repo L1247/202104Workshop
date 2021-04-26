@@ -1,16 +1,13 @@
 {
-    "name": "Tests",
+    "name": "PlayModeTests",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Main",
-        "Unity.RecordedTesting.TestTools",
-        "Unity.RecordedTesting"
+        "Unity.RecordedTesting",
+        "Unity.RecordedTesting.TestTools"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
