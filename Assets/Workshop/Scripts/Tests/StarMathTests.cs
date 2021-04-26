@@ -1,20 +1,32 @@
+#region
+
 using System;
 using Main;
 using NUnit.Framework;
-using UnityEngine;
 
+#endregion
 
 namespace MainTest
 {
     public class StarMathTests
     {
+    #region Private Variables
+
         private StarMath _starMath;
 
+    #endregion
+
+    #region Setup/Teardown Methods
+
         [SetUp]
-        public void Setup()
+        public void SetUp()
         {
             _starMath = new StarMath();
         }
+
+    #endregion
+
+    #region Test Methods
 
         [Test]
         [TestCase(1 , 2 , 3)]
@@ -37,5 +49,7 @@ namespace MainTest
             var exception = Assert.Throws<Exception>(() => { _starMath.Add(number1 , number2); });
             Assert.AreEqual(errorMessage , exception.Message);
         }
+
+    #endregion
     }
 }
