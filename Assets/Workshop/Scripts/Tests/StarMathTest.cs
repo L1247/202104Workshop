@@ -31,6 +31,7 @@ namespace MainTests
         [Test]
         [TestCase(1 , 2 , 3)]
         [TestCase(123 , 789 , 912)]
+        [TestCase(int.MaxValue -5, 7 , int.MaxValue)]
         public void Should_Return_Result_With_Two_Positive_Number(int number1 , int number2 , int expectedResult)
         {
             // Act
@@ -41,8 +42,8 @@ namespace MainTests
 
         [Test]
         [TestCase(-1 , 2 , "Number 1 is negative")]
-        [TestCase(1 , -2,"Number 2 is negative")]
-        [TestCase(-3 , -2,"Number 1 and number 2 is negative")]
+        [TestCase(1 , -2 , "Number 2 is negative")]
+        [TestCase(-3 , -2 , "Number 1 and number 2 is negative")]
         public void Should_Throw_Exception_With_NotInRange_Input_Number(int number1 , int number2 , string message)
         {
             var exception = Assert.Throws<Exception>(() => starMath.Add(number1 , number2));
