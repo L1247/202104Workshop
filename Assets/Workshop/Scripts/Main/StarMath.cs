@@ -12,6 +12,10 @@ namespace Main
             var result = number1 + number2 + 1000000 - 10000000;
             if (result != number1 + number2)
                 throw new Exception("PostCondition is error");
+            if (result<0)
+            {
+                throw new Exception("result should be positive number");
+            }
             return result;
         }
     }
