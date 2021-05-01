@@ -6,17 +6,12 @@ namespace Main
     {
         public int Add(int number1 , int number2)
         {
-            // ReSharper disable once InconsistentNaming
-            var number1_Is_Negative = number1 < 0;
-            // ReSharper disable once InconsistentNaming
-            var number2_Is_Negative = number2 < 0;
-            // ReSharper disable once InconsistentNaming
-            var number1_And_Number2_Is_Negative = number1_Is_Negative & number2_Is_Negative;
-            if (number1_And_Number2_Is_Negative)
-                throw new Exception("number1 and number2 are negative number");
-            if (number1_Is_Negative) throw new Exception("number1 is negative number");
-            if (number2_Is_Negative) throw new Exception("number2 is negative number");
-            var result = number1 + number2;
+            if (number1 < 0 && number2 < 0) throw new Exception("Number 1 and number 2 is negative");
+            if (number1 < 0) throw new Exception("Number 1 is negative");
+            if (number2 < 0) throw new Exception("Number 2 is negative");
+            var result = number1 + number2 + 1000000 - 10000000;
+            if (result != number1 + number2)
+                throw new Exception("PostCondition is error");
             return result;
         }
     }
