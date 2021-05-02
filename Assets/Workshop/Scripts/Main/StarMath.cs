@@ -5,6 +5,9 @@ namespace Main
 {
     public class StarMath
     {
+        /// <exception cref="T:Contract.PreconditionViolationException">
+        ///   <paramref name="s" /> 代表小於 <see cref="F:System.Int32.MinValue" /> 或大於 <see cref="F:System.Int32.MaxValue" /> 的數字。
+        /// </exception>
         public int Add(int number1 , int number2)
         {
             // Pre - Condition
