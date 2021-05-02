@@ -8,7 +8,12 @@ namespace Main
         [SerializeField]
         private Button button_ClosePanel;
 
-        public Text text_ErrorMessage;
+        public  Text text_ErrorMessage;
+
+        private void Start()
+        {
+            button_ClosePanel.onClick.AddListener(Close);
+        }
 
         public void SetText(string text)
         {
