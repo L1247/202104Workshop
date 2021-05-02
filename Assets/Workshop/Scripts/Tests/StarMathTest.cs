@@ -3,6 +3,7 @@
 using System;
 using Main;
 using NUnit.Framework;
+using Utilities.Contract;
 
 #endregion
 
@@ -46,7 +47,7 @@ namespace MainTests
         [TestCase(-3 , -2 , "Number 1 and number 2 is negative")]
         public void Should_Throw_Exception_With_NotInRange_Input_Number(int number1 , int number2 , string message)
         {
-            var exception = Assert.Throws<Exception>(() => starMath.Add(number1 , number2));
+            var exception = Assert.Throws<PreconditionViolationException>(() => starMath.Add(number1 , number2));
             Assert.AreEqual(message , exception.Message);
         }
 
