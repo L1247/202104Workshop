@@ -15,11 +15,18 @@ namespace Main
             var result = number1 + number2;
             // Post - Condition
             Contract.Ensure(result == number1 + number2 , "add function not work");
-            long bigNumber = (long)number1 + (long)number2;
-            if (bigNumber > int.MaxValue)
-                return int.MaxValue;
+            // Overflow Check
+            result = CheckOverflow(number1 , number2 , result);
             // Class invariant
             Contract.Ensure(result >= 0 , $"result should be positive number , result is{result}");
+            return result;
+        }
+
+        private int CheckOverflow(int number1 , int number2 , int result)
+        {
+            long bigNumber = (long)number1 + (long)number2;
+            if (bigNumber > int.MaxValue)
+                result = int.MaxValue;
             return result;
         }
     }
